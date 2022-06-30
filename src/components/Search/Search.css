@@ -1,0 +1,35 @@
+.search__container {
+    min-height: 100vh;
+    padding-top: 100px;
+    display: flex;
+}
+
+.search__wrapper {
+    margin: auto auto;
+}
+
+.search__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input_searchgreen  {
+    display: flex;
+    flex-direction: row;
+    width: 700px;
+}
+
+.input_searchgreen button {
+    cursor: pointer; 
+    background: #a2e698;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .5s;
+    border: none;
+}
+
+.search_title {
+    font-weight: 200;
+    margin-bottom: 40px;
+}

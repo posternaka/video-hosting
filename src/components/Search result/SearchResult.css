@@ -1,0 +1,49 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.input_result {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.like {
+    position: absolute;
+    right: 90px;
+    top: 15px;
+    color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.like:hover {
+    color: red;
+}
+
+.search_title {
+    text-align: left;
+}
+
+.require__show {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    text-align: left;
+}
+
+.video_name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chanel_name {
+    font-size: 1rem;
+    color: rgb(116, 116, 116);
+}
+
+.count_views {
+    font-size: 1rem;
+    color: rgb(116, 116, 116);
+}
