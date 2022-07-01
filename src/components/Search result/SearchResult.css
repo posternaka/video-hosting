@@ -1,6 +1,7 @@
 .container {
     width: 1000px;
     margin: 0 auto;
+    margin-top: 60px;
 }
 
 .input_result {
@@ -9,16 +10,23 @@
     margin-bottom: 40px;
 }
 
-.like {
+.liked {
     position: absolute;
     right: 90px;
     top: 15px;
     color: rgb(204, 204, 204);
     cursor: pointer;
+    transition: .3s;
 }
 
-.like:hover {
+.liked_true {
     color: red;
+    transform: scale(1.1);
+    position: absolute;
+    right: 90px;
+    top: 15px;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .search_title {
@@ -26,24 +34,71 @@
 }
 
 .require__show {
-    display: flex;
-    flex-direction: row;
     gap: 20px;
     text-align: left;
+    margin-bottom: 40px;
 }
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.wrapper_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 
 .video_name {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .chanel_name {
-    font-size: 1rem;
+    font-size: .8rem;
     color: rgb(116, 116, 116);
+    margin-bottom: 3px;
 }
 
 .count_views {
-    font-size: 1rem;
+    font-size: .7rem;
     color: rgb(116, 116, 116);
+}
+
+.res_but:hover {
+    background-color: #7ae06b;
+}
+
+.nav_layout {
+    position: relative;
+}
+
+.icon_layout {
+    position: absolute;
+    color: #a2e698;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.layout_grid {
+    top: 8px;
+    right: 0;
+}
+
+.layout_grid:hover {
+    color: #7ae06b;
+    transform: scale(1.2);
+}
+
+.layout_list {
+    top: 8px;
+    right: 30px;
+}
+
+.layout_list:hover {
+    color: #7ae06b;
+    transform: scale(1.2);
 }
