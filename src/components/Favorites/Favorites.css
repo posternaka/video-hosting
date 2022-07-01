@@ -1,0 +1,24 @@
+.favorites_item {
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.104);
+    text-align: left;
+    margin-bottom: 2px;
+    cursor: pointer;
+    transition: .3s;
+    position: relative;
+}
+
+.editing {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    right: 20px;
+    top: 20%;
+    font-size: 1rem;
+}
+
+.favorites_item p{
+    text-align: left;
+}

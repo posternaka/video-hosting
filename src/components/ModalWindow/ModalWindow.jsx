@@ -2,7 +2,10 @@ import './ModalWindow.css';
 
 function ModalWindow() {
   return (
-    <div>ModalWindow</div>
+    <div className='modalWindow'>
+      <p>Modal</p>
+      <h1>Windows</h1>
+    </div>
   )
 }
 

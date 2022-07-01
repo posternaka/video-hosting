@@ -2,6 +2,7 @@ header {
     position: fixed;
     width: 100%;
     z-index: 10000;
+    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
 }
 
 .header__container {
@@ -31,6 +32,15 @@ header {
 .header_nav ul{
     display: flex;
     flex-direction: row;
+    
+}
+ul a {
+    color: rgba(255, 255, 255, 0.704); 
+}
+
+
+.header_nav ul a {
+    text-decoration: none;
 }
 
 .logo {
@@ -48,10 +58,9 @@ header {
 .header_nav ul li {
     cursor: pointer;
     position: relative;
-    color: rgba(255, 255, 255, 0.704); 
 }
 
-.header_nav ul .nav_active {
+.header_nav ul .nav_active a{
     color: #fff;
 }
 

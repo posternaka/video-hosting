@@ -1,11 +1,10 @@
 import './Search.css';
-
 import SearchResult from '../Search result/SearchResult';
 
 function Search() {
   return (
     <div className='search__container'>
-      {/* <div className="search__wrapper">
+      <div className="search__wrapper">
         <div className="search__flex">
 
           <h1 className='search_title'>Поиск видео</h1>
@@ -20,8 +19,7 @@ function Search() {
           </label>
 
         </div>
-      </div> */}
-      <SearchResult />
+      </div>
     </div>
   )
 }

@@ -1,4 +1,7 @@
 import './Header.css';
+import Favorites from '../Favorites/Favorites';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 // FontAwesomeIcon 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +9,8 @@ import { faFilm } from "@fortawesome/free-solid-svg-icons";
 
 
 function Favourites() {
+  const [activeElem, setActiveElem] = useState(true);
+
   return (
     <header>
       <div className="header__container">
@@ -16,8 +21,8 @@ function Favourites() {
               <FontAwesomeIcon icon={faFilm} className="fIcons logo"/>
 
               <ul>
-                <li className='nav_active'>Поиск</li>
-                <li >Избранное</li>
+                <li className={activeElem ? 'nav_active' : ''} onClick={() => setActiveElem(true)}><Link to="/search">Поиск</Link></li>
+                <li className={activeElem ? '' : 'nav_active'} onClick={() => setActiveElem(false)}><Link to="/favorites">Избранное</Link></li>
               </ul>
 
             </div>

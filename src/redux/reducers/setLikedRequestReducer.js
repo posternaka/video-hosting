@@ -8,7 +8,7 @@ export const setLikedRequest = (state = [], action) => {
         }
 
         case SET_DELETION_LIKED_REQUEST: {
-            return [state.splice(1)]
+            return [...state.filter((item, index) => index !== action.payload)]
         }
 
         default: {
@@ -16,3 +16,4 @@ export const setLikedRequest = (state = [], action) => {
         }
     }
 }
+
