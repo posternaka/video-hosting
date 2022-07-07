@@ -25,7 +25,7 @@ function Header() {
             </div>
 
             <div className="header_logOut">
-              <span>Выйти</span>
+              <Link to="/">Выйти</Link>
             </div>
 
           </div>
