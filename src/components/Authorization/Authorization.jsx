@@ -1,6 +1,10 @@
 import './Authorization.css';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+// import
+import Auth from '../hoc/Auth';
 
 // FontAwesomeIcon 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -10,6 +14,7 @@ import { faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 
 
 function Authorization() {
+  const navigate = useNavigate();
   const [visiblePass, setVisiblePass] = useState(false);
   const [inputValueLogin, setInputValueLogin] = useState('');
   const [inputValuePass, setInputValuePass] = useState('');
@@ -38,8 +43,9 @@ function Authorization() {
         headers: { "Content-Type": "application/json" },
       })
 
-      localStorage.setItem("token", axiosR.data.token)
-      
+      localStorage.setItem("token", axiosR.data.token);
+
+      axiosR.data.token ? navigate("/search") : new Error('Не удалось авторизоваться...')
     }
     catch {
       throw new Error('Oooops...')
