@@ -22,7 +22,6 @@
     border-bottom: 1px solid #a2e698;
     outline: none;
     color: #000;
-    transition: .5s;
 }
 
 .liked {
@@ -57,6 +56,69 @@
 
 .button:hover {
     background-color: #7ae06b;
+}
+
+.content__block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.content_parametrs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon_layout {
+    color: #a2e698;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon_layout:hover {
+    color: #7ae06b;
+    transform: scale(1.2);
+}
+
+.icon_layout.active {
+    color: #7ae06b;
+    transform: scale(1.2);
+}
+
+.icon_layout:first-child {
+    margin-right: 20px;
+}
+
+.content {
+}
+
+.layout {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.layout:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.flex {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 

@@ -1,0 +1,152 @@
+.modalWindow {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.modalWindow.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalWindow__flex {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: relative;
+}
+
+.auth__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 100px 140px 100px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);  
+    box-shadow: 0px 1px 2px 0px #a2e69890,
+                1px 2px 4px 0px #a2e69890,
+                2px 4px 8px 0px #a2e69890,
+                2px 4px 16px 0px #a2e69890;
+}
+
+.auth__flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    
+}
+
+.fIcons {
+    display: block;
+    width: 90px;
+    height: 70px;
+    color: #a2e698;
+}
+
+.auth_title {
+    color: #a2e698;
+    margin-bottom: 20px;
+}
+
+.requie {
+    position: relative;
+    width: 250px;
+}
+
+.requie input {
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #a2e698;
+    outline: none;
+    color: #000;
+    font-size: 1rem;
+    transition: .5s;
+}
+
+.requie span {
+    position: absolute;
+    left: 0;
+    padding: 19px;
+    pointer-events: none;
+    font-size: 1.1rem;
+    color: #000;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.requie input:valid ~ span,
+.requie input:focus ~ span {
+    color:#a2e698;
+    transform: translateX(10px) translateY(-10px);
+    margin-bottom: 10px;
+    font-size: 1rem;
+    padding: 0 10px;
+    color: #fff;
+    background: #a2e698;  
+}
+
+.requie input:valid,
+.requie input:focus {
+    border-bottom: 1px solid #a2e698;
+}
+
+.butt {
+    cursor: pointer; 
+    background: #a2e698;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .5s;
+    border: none;
+}
+
+.password-control {
+    position: absolute;
+    bottom: 0;
+	right: 6px;
+	width: 15px;
+	height: 15px;
+
+    padding: 19px;
+    font-size: 1.1rem;
+    color: #a2e698;
+    text-transform: uppercase;
+    transition: .5s;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+}
+
+.button_group {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+.inversion {
+    cursor: pointer; 
+    background: #fff;
+    border: 1px solid #a2e698;
+    text-transform: uppercase;
+    color: #a2e698;
+    transition: .5s;
+}
