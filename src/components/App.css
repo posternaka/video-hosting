@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+/* Content */
+main {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* height: 100vh; */
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

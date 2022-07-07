@@ -1,0 +1,64 @@
+.search_title {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.input {
+    display: flex;
+    flex-direction: row;
+}
+
+.input_position {
+    width: 100%;
+    position: relative;
+    font-size: 1.3rem;
+}
+
+.input_position input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #a2e698;
+    outline: none;
+    color: #000;
+    transition: .5s;
+}
+
+.liked {
+    color: red;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+    transition: .3s;
+    top: 50%;                         
+    transform: translate(0, -50%) scale(1.3);
+}
+
+.liked.dis{
+    color: rgb(204, 204, 204);
+    transform: translate(0, -50%) scale(1);
+}
+
+.liked:hover {
+    color: red;
+}
+
+.button {
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer; 
+    background: #a2e698;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .3s;
+    border: none;
+}
+
+.button:hover {
+    background-color: #7ae06b;
+}
+
+
+/* Grid and Flex */
+

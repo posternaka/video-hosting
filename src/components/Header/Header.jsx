@@ -25,7 +25,7 @@ function Header() {
             </div>
 
             <div className="header_logOut">
-              <Link to="/">Выйти</Link>
+              <Link to="/" onClick={() => localStorage.clear()}>Выйти</Link>
             </div>
 
           </div>
