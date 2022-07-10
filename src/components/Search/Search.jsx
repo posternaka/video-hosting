@@ -47,6 +47,7 @@ function Search() {
     // dispatch(setLikedRequest(requestVideo))
     // setLiked(true)
     handleSetEditButton()
+    setLiked(true)
   }
 
   const handleDeletionLike = () => {
