@@ -1,26 +1,143 @@
 import './Search.css';
-import SearchResult from '../Search result/SearchResult';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setLikedRequest, setDeletionLikedRequest, fetchGetVideos } from '../../reduxToolkit/toolkitReducer';
+
+// FontAwesomeIcon 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faTableCells } from "@fortawesome/free-solid-svg-icons";
+import { faList } from "@fortawesome/free-solid-svg-icons";
+
+// Routes 
+import Flex from './Layout/Flex';
+import Grid from './Layout/Grid';
+// import ModalWindow from './ModalWindows/ModalWindows';
 
 function Search() {
+  const [active, setActive] = useState(false);
+  const [value, setValue] = useState('');
+  const handleSetEditButton = () => (
+    setActive('true'),
+    setValue(requestVideo)
+  )
+
+  const [requestVideo, setRequestVideo] = useState('');
+  const [requestVideoWhole, setRequestVideoWhole] = useState('');
+  const [layout, setLayout] = useState(true);
+  const [liked, setLiked] = useState(false);
+
+  const dispatch = useDispatch();
+  const { likedRequests } = useSelector(store => store);
+  console.log(likedRequests);
+  
+  useEffect(() => {
+    dispatch(fetchGetVideos(requestVideoWhole))
+  }, [])
+
+  const handleChange = (e) => {
+    setRequestVideo(e)
+    likedRequests.includes(e) ? setLiked(true) : setLiked(false)
+  }
+
+  const handleLike = () => {
+    // dispatch(setLikedRequest(requestVideo))
+    // setLiked(true)
+    handleSetEditButton()
+    setLiked(true)
+  }
+
+  const handleDeletionLike = () => {
+    const id = likedRequests.indexOf(requestVideo)
+    dispatch(setDeletionLikedRequest(id))
+    setLiked(false)
+  }
+
+  const handleKeyDownName = (e) => (
+    e === "Enter" 
+      ? setRequestVideoWhole(requestVideo)
+      : ''
+  )
+
+  const handlePressBut = () => {
+    setRequestVideoWhole(requestVideo);
+    dispatch(fetchGetVideos(requestVideoWhole));
+  }
+
+
   return (
-    <div className='search__container'>
-      <div className="search__wrapper">
-        <div className="search__flex">
+    <main>
+      <div className="container">
+        {/* <ModalWindow active={active} setActive={setActive} value={value} /> */}
+        <div >
+          
+          <div className="search__block">
 
-          <h1 className='search_title'>Поиск видео</h1>
-          <label>
+              <h1 className='search_title'>Поиск видео</h1>
 
-            <div className="inputBox input_searchgreen">
-              <input type="text" required="required" />
-              <span>Поиск видео</span>
-              <button>Найти</button>
-            </div>
-            
-          </label>
+              <div className="input">
 
+                <div className="input_position">
+                  <input 
+                    type="text" 
+                    placeholder='Введите название видео'
+                    onKeyDown={(e) => handleKeyDownName(e.key)}
+                    onChange={(e) => handleChange(e.target.value)}
+                  />
+                  {/* {
+                    data.length > 0 
+                      ? <FontAwesomeIcon 
+                          icon={faHeart} 
+                          className={liked ? 'liked' : 'liked dis'}  
+                          onClick={() => liked ? handleDeletionLike() : handleLike()} 
+                        />
+                      : null
+                  } */}
+                  
+                </div>
+
+                <button className='button' onClick={() => handlePressBut()}>Найти</button>
+
+              </div>
+          </div>
+
+          <div className="content__block">
+
+            {/* {
+              data && data.map(item => (
+                <>
+                  <div className='content_parametrs'>
+                    <h3>Видео по запросу: <span className='search_title_bold'>{requestVideoWhole}</span></h3>
+                    <div>
+                      <FontAwesomeIcon 
+                        icon={faTableCells} 
+                        className={layout ? "icon_layout active" : "icon_layout"} 
+                        onClick={() => setLayout(true)}
+                      />
+                      <FontAwesomeIcon 
+                        icon={faList} 
+                        className={layout ? "icon_layout" : "icon_layout active"} 
+                        onClick={() => setLayout(false)}
+                      />
+                    </div>
+                  </div>
+
+                  <div className={layout ? "content grid" : "content flex"}>
+                    {
+                      layout 
+                        ? <Grid data={item}/>
+                        : <Flex data={item}/>
+                    }
+                  </div>
+                </>
+              ))
+            } */}
+
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 

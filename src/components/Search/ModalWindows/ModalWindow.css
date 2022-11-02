@@ -1,0 +1,129 @@
+.modalWindow {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.modalWindow.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalWindow__flex {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 90px;
+    padding-right: 90px;
+    /* display: flex;
+    flex-direction: column; */
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+.modalWindow__title {
+    color: #a2e698;
+    margin-bottom: 20px;
+}
+
+.requie input,
+.requie select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border: 1px solid #a2e698;
+    border-radius: 5px;
+    outline: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+}
+
+.button_group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+}
+
+.butt {
+    width: 200px;
+    height: 50px;
+    cursor: pointer; 
+    background: #a2e698;
+    text-transform: uppercase;
+    color: #fff;
+    transition: .5s;
+    border: 1px solid #a2e698;
+    border-radius: 0 0 10px 10px;
+}
+
+.butt:hover {
+    background: #88da7c;
+}
+
+.inversion {
+    cursor: pointer; 
+    background: #fff;
+    border: 1px solid #a2e698;
+    text-transform: uppercase;
+    color: #a2e698;
+    transition: .5s;
+}
+
+.inversion:hover {
+    background: rgb(250 250 250);
+}
+
+span.red {
+    color: red;
+}
+
+.range_grid {
+    display: grid;
+    grid-template-columns: 2fr 90px;
+    gap: 20px;
+    align-items: end;
+}
+
+.slider {
+    appearance: none;
+    width: 100%;
+    height: 5px;
+    margin-bottom: 20px;
+    border-radius: 5px;  
+    background: #a2e698;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%; 
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.ban {
+    pointer-events: none;
+    background: rgb(234, 234, 234);
+}
