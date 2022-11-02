@@ -1,35 +1,127 @@
-.search__container {
-    min-height: 100vh;
-    padding-top: 100px;
-    display: flex;
+.search_title {
+    font-size: 3rem;
+    text-align: center;
+    padding-bottom: 80px;
 }
 
-.search__wrapper {
-    margin: auto auto;
-}
-
-.search__flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.input_searchgreen  {
+.input {
     display: flex;
     flex-direction: row;
-    width: 700px;
 }
 
-.input_searchgreen button {
+.input_position {
+    width: 100%;
+    position: relative;
+    font-size: 1.3rem;
+}
+
+.input_position input {
+    width: 100%;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid #a2e698;
+    outline: none;
+    color: #000;
+}
+
+.liked {
+    color: red;
+    position: absolute;
+    right: 2%;
+    cursor: pointer;
+    transition: .3s;
+    top: 50%;                         
+    transform: translate(0, -50%) scale(1.3);
+}
+
+.liked.dis{
+    color: rgb(204, 204, 204);
+    transform: translate(0, -50%) scale(1);
+}
+
+.liked:hover {
+    color: red;
+}
+
+.button {
+    padding-left: 30px;
+    padding-right: 30px;
     cursor: pointer; 
     background: #a2e698;
     text-transform: uppercase;
     color: #fff;
-    transition: .5s;
+    transition: .3s;
     border: none;
 }
 
-.search_title {
-    font-weight: 200;
-    margin-bottom: 40px;
+.button:hover {
+    background-color: #7ae06b;
 }
+
+.content__block {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+.content_parametrs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon_layout {
+    color: #a2e698;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.icon_layout:hover {
+    color: #7ae06b;
+    transform: scale(1.2);
+}
+
+.icon_layout.active {
+    color: #7ae06b;
+    transform: scale(1.2);
+}
+
+.icon_layout:first-child {
+    margin-right: 20px;
+}
+
+.content {
+}
+
+.layout {
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+    text-align: left;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 5px;
+}
+
+.layout:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.flex {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+/* Grid and Flex */
+

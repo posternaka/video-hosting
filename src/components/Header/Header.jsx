@@ -1,5 +1,4 @@
 import './Header.css';
-import Favorites from '../Favorites/Favorites';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -7,10 +6,8 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilm } from "@fortawesome/free-solid-svg-icons";
 
-
-function Favourites() {
+function Header() {
   const [activeElem, setActiveElem] = useState(true);
-
   return (
     <header>
       <div className="header__container">
@@ -28,7 +25,7 @@ function Favourites() {
             </div>
 
             <div className="header_logOut">
-              <span>Выйти</span>
+              <Link to="/" onClick={() => localStorage.clear()}>Выйти</Link>
             </div>
 
           </div>
@@ -38,4 +35,4 @@ function Favourites() {
   )
 }
 
-export default Favourites;
+export default Header
